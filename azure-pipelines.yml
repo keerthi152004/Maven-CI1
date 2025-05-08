@@ -7,14 +7,15 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
+
 
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
+    javaHomeOption: 'default'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
